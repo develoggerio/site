@@ -1,0 +1,27 @@
+/**
+ * @file
+ *
+ * Typography: Arrow link styles.
+ */
+
+/*doc
+---
+title: Arrow links
+name: link--arrow
+category: Typography
+parent: links
+---
+```html_example_table
+<div class="styleguide-wrapper">
+  <a href="#" class="link--arrow">View all posts</a>
+</div>
+
+<div class="styleguide-wrapper bg-teal">
+  <a href="#" class="link--arrow link--light">Our core values</a>
+</div>
+```
+*/
+
+.link--arrow {
+  @include link-arrow;
+}

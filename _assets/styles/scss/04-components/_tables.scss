@@ -1,0 +1,90 @@
+/**
+ * @file
+ *
+ * Table styles.
+ */
+
+/*doc
+---
+title: Tables
+name: tables
+category: Components
+---
+Use the class `table--minimal` to produce the following:
+
+```html_example
+<table class="table--minimal">
+  <tbody>
+    <tr>
+      <td class="label"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Client since</td>
+      <td>2016 - present</td>
+    </tr>
+    <tr>
+      <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
+      <td>
+        <ul>
+          <li><a href="/services/development">Standard Audit</a></li>
+          <li><a href="/services/development">Drupal 6 to 7 migration</a></li>
+          <li><a href="/blog/tag/theming">Drupal theming and site-building</a></li>
+          <li><a href="/services/development">Drupal custom module development</a></li>
+          <li><a href="/services/development">Performance improvements</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
+      <td>
+        <ul>
+          <li><a href="/blog/tag/drupal">Drupal 7</a></li>
+          <li><a href="/blog/tag/migration">Migrate module</a></li>
+          <li><a href="/blog/tag/docker">Docker</a></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+
+*/
+
+// Table refill.
+.table--minimal,
+article table {
+  @include table-minimal;
+
+  // Override some of the default styles.
+  tbody {
+    tr {
+      &:first-child td,
+      td {
+        border-color: $grey;
+      }
+
+      &:hover,
+      &:focus {
+        > td,
+        > th {
+          @include ease;
+
+          background-color: $light-teal;
+          color: $dark-teal;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    ul,
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+// Add space before and after tables in articles.
+article table {
+  margin-bottom: 3em;
+  margin-top: 3em;
+}

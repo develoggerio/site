@@ -1,0 +1,40 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+.region--hero--services {
+  background-color: $magenta;
+  margin: 0;
+
+  .region--hero__text {
+    color: $eggshell;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      color: $eggshell;
+    }
+
+    // scss-lint:disable ImportantRule
+    a,
+    a:hover,
+    a:focus {
+      color: $eggshell !important;
+    }
+    // scss-lint:enable ImportantRule
+
+    p {
+      @include grid-media($medium-screen-up) {
+        @include paragraph-loud;
+      }
+    }
+  }
+
+  .region--hero__image {
+    background-image: url('/assets/img/bg/services-hero.jpg');
+    background-position: 10% center;
+  }
+}

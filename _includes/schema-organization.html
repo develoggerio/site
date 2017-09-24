@@ -1,0 +1,19 @@
+{% assign logo = '/assets/img/logo.png' %}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "description": "{{ site.description }}",
+    "email": "{{ site.email }}",
+    "logo": {
+      "@context": "http://schema.org",
+      "@type": "ImageObject",
+      "description": "Develogger IO logo",
+      "height": "50px",
+      "url": "{{ logo| prepend: site.url }}",
+      "width": "114px"
+    },
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  }
+</script>

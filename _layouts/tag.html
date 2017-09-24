@@ -1,0 +1,65 @@
+---
+layout: default
+class: "tag"
+---
+
+{% comment %} Find the name of this tag page. {% endcomment %}
+{% for tag in site.data.tags %}
+    {% if tag.slug == page.tag %}
+        {% assign tag = tag.name %}
+    {% endif %}
+{% endfor %}
+{% if tag == "Event" %}
+{% assign title = "Events: IRL" %}
+{% else %}
+{% assign title = tag %}
+{% endif %}
+{% include regions/banner--heading.html heading=title %}
+
+{% comment %} See if there are any related case studies. {% endcomment %}
+{% assign items = site.case-studies | sort: 'weight' %}
+{% assign related_case_studies = 0 %}
+{% for item in items %}
+{% if item.tags contains page.tag %}
+{% assign related_case_studies = related_case_studies | plus: 1 %}
+{% endif %}
+{% endfor %}
+
+{% comment %} If so, output the top-weighted three. {% endcomment %}
+{% if related_case_studies > 0 %}
+<div class="tag__related-case-studies region--case-study-blocks region--case-study-blocks--small region">
+  <h2 class="heading--underline--orange">Case Studies that include {{ tag }}</h2>
+  <div class="region--case-study-blocks__case-studies">
+    {% include regions/case-study-blocks--related--post.html tags=page.tag limit=3 %}
+  </div>
+</div>
+<div class="view-more-link flex-center">
+  <a href="/results/case-studies">View all case studies</a>
+</div>
+{% endif %}
+
+{% comment %} See if there are any related blog posts. {% endcomment %}
+{% assign items = site.posts %}
+{% assign related_posts = 0 %}
+{% for item in items %}
+{% if item.tags contains page.tag %}
+{% assign related_posts = related_posts | plus: 1 %}
+{% endif %}
+{% endfor %}
+
+{% if related_case_studies > 0 and related_posts > 0 %}
+<hr>
+{% endif %}
+
+{% comment %} If so, output the latest 9. {% endcomment %}
+{% if related_posts > 0 %}
+<div class="tag__related-posts region--blog-tiles--all region">
+  <h2 class="heading--underline--orange">Blog Posts about {{ tag }}</h2>
+  <div class="region--blog-tiles--all__tiles">
+    {% include regions/blog-tiles--related--post.html tags=page.tag limit=9 %}
+  </div>
+  <div class="flex-center">
+    <a href="/blog" class="link--arrow">Return to blog</a>
+  </div>
+</div>
+{% endif %}

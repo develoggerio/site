@@ -1,0 +1,46 @@
+/**
+ * @file
+ *
+ * Typography: link styles.
+ */
+
+/*doc
+---
+title: Links
+name: links
+category: Typography
+---
+```html_example_table
+<div class="styleguide-wrapper">
+  <a href="#">Normal link</a>
+</div>
+
+<div class="styleguide-wrapper bg-teal">
+  <a href="#" class="link--light">Light link</a>
+</div>
+```
+*/
+
+a {
+  color: $action-color;
+  transition: all .1s linear;
+
+  &:hover,
+  &:focus {
+    color: $action-color-hover;
+  }
+}
+
+.link--light {
+  @include link--light;
+}
+
+.link--light--no-hover {
+  @include link--light--no-hover;
+}
+
+// Hide text only meant for screen readers (e.g. link text for image links).
+.sr-only {
+  display: none;
+}
+

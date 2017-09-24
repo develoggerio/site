@@ -1,0 +1,77 @@
+/**
+ * @file
+ *
+ * Service icons region styles.
+ */
+
+/*doc
+---
+title: Service icons
+name: service-icons
+category: Regions
+---
+
+```html_example
+<div class="region--service-icons region">
+  <div class="icon--service">
+    <a href="/services/strategy/" class="icon--service__link">
+      <div class="icon--service__image">
+        <img src="/assets/img/icons-and-logos/strategy-icon.svg" alt="Strategy / Consulting">
+      </div>
+      <p class="icon--service__title">Strategy / Consulting</p>
+    </a>
+  </div>
+    <div class="icon--service">
+    <a href="/services/development/" class="icon--service__link">
+      <div class="icon--service__image">
+        <img src="/assets/img/icons-and-logos/development-icon.svg" alt="Development">
+      </div>
+      <p class="icon--service__title">Development</p>
+    </a>
+  </div>
+    <div class="icon--service">
+    <a href="/services/design-ux/" class="icon--service__link">
+      <div class="icon--service__image">
+        <img src="/assets/img/icons-and-logos/design-ux-icon.svg" alt="Design / UX">
+      </div>
+      <p class="icon--service__title">Design / UX</p>
+    </a>
+  </div>
+    <div class="icon--service">
+    <a href="/services/support/" class="icon--service__link">
+      <div class="icon--service__image">
+        <img src="/assets/img/icons-and-logos/support-maintenance-icon.svg" alt="Support / Maintenance">
+      </div>
+      <p class="icon--service__title">Support / Maintenance</p>
+    </a>
+  </div>
+</div>
+```
+
+*/
+
+.region.region--service-icons {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: $base-spacing * 1.5;
+  padding-top: $base-spacing * 1.5;
+  width: 100%;
+
+  > div {
+    align-content: center;
+    display: flex;
+    flex: 1;
+    flex-basis: 50%;
+    justify-content: flex-start;
+    margin: $base-spacing / 2 0;
+    width: 50%;
+
+    @include grid-media($medium-screen-up) {
+      flex-basis: 25%;
+      margin: 0;
+      width: 25%;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/**
+ * @file
+ *
+ * Typography: hr styles.
+ */
+
+/*doc
+---
+title: Horizontal Rule
+name: hr
+category: Typography
+---
+
+```html_example
+<hr>
+```
+
+*/
+
+hr {
+  border-color: $light-grey;
+  clear: both;
+  margin: $base-margin 0;
+}

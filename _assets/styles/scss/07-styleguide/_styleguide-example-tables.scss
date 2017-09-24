@@ -1,0 +1,25 @@
+/**
+ * @file
+ *
+ * Styles for examples and code blocks using the table layout.
+ */
+
+.codeTable {
+  table {
+    th,
+    td {
+      border-bottom: solid 1px $light-grey;
+      display: block;
+      padding: 1em .5em;
+
+      @include grid-media($medium-screen-up) {
+        display: table-cell;
+      }
+    }
+
+    // Undo base table styles so component text isn't bold.
+    th {
+      font-weight: normal;
+    }
+  }
+}

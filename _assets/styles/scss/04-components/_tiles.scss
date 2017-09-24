@@ -1,0 +1,71 @@
+/**
+ * @file
+ *
+ * General tile styles (doesn't include title tiles).
+ */
+
+
+/*doc
+---
+title: Tiles
+name: tiles
+category: Components
+---
+
+*/
+
+.tile {
+  position: relative;
+
+  // Description and read more link should show on link hover.
+  .tile__hover {
+    align-items: center;
+    color: $eggshell;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    padding: $base-spacing;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all .3s ease;
+    width: 100%;
+    z-index: 1;
+
+    // The tile summary.
+    p:first-child {
+      margin-bottom: $base-spacing * 1.5;
+      max-width: 15em;
+    }
+
+    .link--cta {
+      margin-bottom: 0;
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    // Content shown on hover.
+    .tile__hover {
+      opacity: 1;
+    }
+
+    .tile--blog--detailed__primary-tag {
+      margin-left: 1em;
+    }
+
+    .tile--blog__post-title .tile--blog--detailed__author-bg {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  p {
+    @include grid-media($extra-large-screen-up) {
+      font-size: 1.1em;
+    }
+  }
+}

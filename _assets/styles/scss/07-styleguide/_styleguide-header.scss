@@ -1,0 +1,19 @@
+/**
+ * @file
+ *
+ * Styles for the style guide header.
+ */
+
+.sg-header {
+  .header-navigation__menu-link {
+    &:last-child a {
+      font-weight: 400;
+    }
+
+    &:last-child:not(.header-navigation__active-nav-item):not(:hover):not(:focus) {
+      a {
+        color: $dark-teal;
+      }
+    }
+  }
+}

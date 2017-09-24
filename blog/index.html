@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blog
+redirect_from:
+  - /news/
+class: blog
+excerpt: Develogger IO - life as a software project 
+---
+
+{% include regions/banner--heading.html heading="Blog" subheading="Explore. Learn. Apply." %}
+{% if paginator.page == 1 %}
+{% include regions/blog-tiles--latest.html %}
+{% endif %}
+<div class="page--blog__wrapper region">
+  {% include regions/blog-tiles--all.html %}
+  {% include regions/blog-topics.html %}
+</div>

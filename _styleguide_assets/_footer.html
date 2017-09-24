@@ -1,0 +1,43 @@
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="sg-footer region--footer" role="contentinfo">
+      <div class="region--footer__main">
+        <div class="region--footer__main__menu">
+          <a href="/" class="region--footer__logo">
+            <img src="images/logo-light.svg" alt="Develogger IO" class="develogger-logo develogger-logo--light">
+          </a>
+          <nav role="navigation" class="footer-navigation">
+            <ul class="footer-navigation__menu">
+              <li class="footer-navigation__menu-link <%= 'footer-navigation__active-nav-item' if title.length == 0 %>"><a href="index.html">Intro</a></li>
+              <li class="footer-navigation__menu-link <%= 'footer-navigation__active-nav-item' if title == 'colors' %>"><a href="colors.html">Colors</a></li>
+              <li class="footer-navigation__menu-link <%= 'footer-navigation__active-nav-item' if title == 'Typography' %>"><a href="typography.html">Typography</a></li>
+              <li class="footer-navigation__menu-link <%= 'footer-navigation__active-nav-item' if title == 'Components' %>"><a href="components.html">Components</a></li>
+              <li class="footer-navigation__menu-link <%= 'footer-navigation__active-nav-item' if title == 'Regions' %>"><a href="regions.html">Regions</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="region--footer__main__contact">
+          <h4 class="region--footer__main__contact__title h5">Connect with us</h4>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <address>
+          </address>
+        </div>
+        <div class="region--footer__main__social">
+          <div class="region--footer__main__social__icons">
+            <a href="https://github.com/develoggerio"><span class="fa fa-github fa-lg fa-2x"></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="region--footer__bottom">
+        <div class="region--footer__bottom__wrapper">
+          <p class="region--footer__bottom__copyright">
+            Copyright &copy; Develogger IO 2017
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js" async></script>
+  </body>
+</html>
