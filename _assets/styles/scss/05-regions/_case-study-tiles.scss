@@ -1,0 +1,35 @@
+/**
+ * @file
+ *
+ * Case study tiles region styles.
+ */
+
+/*doc
+---
+title: Case study tiles
+name: case-study-tiles
+category: Regions
+---
+
+
+*/
+
+.region--case-study-tiles__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include grid-media($large-screen-up) {
+    flex-wrap: nowrap;
+  }
+
+  .region--case-study-tiles__tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    @include grid-media($large-screen-up) {
+      width: 50%;
+    }
+  }
+}

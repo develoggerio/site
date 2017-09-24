@@ -1,0 +1,28 @@
+/**
+ * @file
+ *
+ * Styles for the contact block that appears at the bottom of some pages.
+ */
+
+.contact-block {
+  background-color: lighten($light-gray, 10);
+  clear: both;
+  padding: 2.5em 0;
+  text-align: center;
+
+  .contact-block__items {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    h3,
+    a {
+      margin: .5em;
+    }
+
+    a {
+      @include button;
+    }
+  }
+}

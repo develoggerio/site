@@ -1,0 +1,28 @@
+/**
+ * @file
+ *
+ * Styles for examples and code blocks.
+ */
+
+.codeExample {
+  margin: $base-spacing 0;
+
+  .exampleOutput {
+    border-left: 1px solid $light-grey;
+    border-right: 1px solid $light-grey;
+    border-top: 1px solid $light-grey;
+    overflow: auto;
+    padding: 3em 1.5em 1.5em;
+    position: relative;
+
+    &::before {
+      color: darken($light-grey, 10%);
+      content: 'Example';
+      font-size: .8em;
+      left: .8em;
+      position: absolute;
+      text-transform: uppercase;
+      top: .8em;
+    }
+  }
+}

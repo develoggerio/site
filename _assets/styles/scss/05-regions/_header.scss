@@ -1,0 +1,45 @@
+/**
+ * @file
+ *
+ * Header styles.
+ */
+
+/*doc
+---
+title: Header
+name: header
+category: Regions
+---
+
+
+*/
+
+.region--header {
+  background-color: $navigation-background;
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  a {
+    text-decoration: none;
+  }
+
+  .region--header__wrapper {
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .region--header__logo {
+    display: inline-block;
+    float: left;
+    height: $navigation-height;
+    margin: 0;
+    padding-left: $navigation-padding-horizontal-small;
+
+    @include grid-media($horizontal-bar-mode) {
+      padding-left: $navigation-padding-horizontal-large;
+      padding-right: 1em;
+    }
+  }
+}

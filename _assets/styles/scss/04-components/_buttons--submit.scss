@@ -1,0 +1,26 @@
+/**
+ * @file
+ *
+ * Buttons: Submit button styles.
+ */
+
+/*doc
+---
+title: Submit button
+name: buttons--submit
+category: Components
+parent: buttons
+---
+
+```html_example_table
+<input type="submit" value="Post comment" id="submit">
+```
+
+*/
+
+[type="submit"] {
+  @include button-dark;
+
+  padding: .75em 3em;
+  text-transform: none;
+}

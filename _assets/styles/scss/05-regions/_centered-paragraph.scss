@@ -1,0 +1,29 @@
+/**
+ * @file
+ *
+ * Styles for centered paragraph regions.
+ */
+
+/*doc
+---
+title: Centered Paragraph
+name: centered-paragraph
+category: Regions
+---
+
+
+*/
+
+.region--centered-paragraph {
+  .region--centered-paragraph__text {
+    color: $dark-teal;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 2em;
+    text-align: center;
+  }
+}
+
+.region--centered-paragraph--white {
+  background-color: $white;
+}

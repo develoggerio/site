@@ -1,0 +1,283 @@
+/**
+ * @file
+ *
+ * Custom mixins.
+ *
+ * To learn about when to use a mixin and when to use an abstract class, read
+ * this: https://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
+ * TL;DR: You almost always should use a mixin.
+ */
+
+@mixin outer-container() {
+  @include grid-container();
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin accent-line($color) {
+  background: $color;
+  content: '';
+  display: block;
+  height: 1px;
+  margin: 10px 0 .5em;
+  width: 30px;
+}
+
+@mixin heading-underline($color: $teal) {
+  &::after {
+    @include accent-line($color);
+  }
+}
+
+@mixin heading-underline-right($color: $teal) {
+  position: relative;
+  text-align: right;
+
+  &::after {
+    @include accent-line($color);
+    position: absolute;
+    right: 0;
+  }
+}
+
+@mixin paragraph-loud() {
+  font-size: 1.25em;
+}
+
+@mixin paragraph-louder() {
+  font-size: 1.563em;
+}
+
+@mixin paragraph-loud-responsive() {
+  font-size: 1.25em;
+
+  @include grid-media($large-screen-up) {
+    font-size: 1.563em;
+  }
+}
+
+@mixin ease() {
+  transition: all .2s ease-in-out;
+}
+
+@mixin link--light() {
+  color: $eggshell;
+
+  &:hover,
+  &:focus {
+    color: $orange;
+  }
+}
+
+@mixin link--light--no-hover() {
+  color: $eggshell;
+
+  &:hover,
+  &:focus {
+    color: $eggshell;
+  }
+}
+
+@mixin link-arrow() {
+  text-transform: uppercase;
+
+  &::after {
+    content: '\f105';
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    margin-left: .75em;
+  }
+}
+
+@mixin link-inline() {
+  border-bottom: .1em solid transparentize($orange, .9);
+  color: $orange;
+
+  &:hover,
+  &:focus {
+    border-bottom: .1em solid $magenta;
+    color: $magenta;
+  }
+}
+
+@mixin button($background-color: $white, $color: $teal) {
+  background-color: transparent;
+  border: solid 2px $color;
+  border-radius: 0;
+  color: $color;
+  display: inline-block;
+  font-family: $copytext-font;
+  font-size: 1.25em;
+  padding: .75em 1.5em;
+  text-transform: uppercase;
+  transition: (all .2s ease-in-out);
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color, 10%);
+    border-color: lighten($color, 10%);
+    color: lighten($background-color, 10%);
+  }
+}
+
+@mixin button-dark($background-color: $teal, $color: $eggshell) {
+  @include button($background-color, $color);
+
+  background-color: $background-color;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color, 10%);
+    border-color: lighten($background-color, 10%);
+    color: lighten($background-color, 10%);
+  }
+}
+
+@mixin button-arrow($background-color: $white, $color: $teal) {
+  @include button($background-color, $color);
+
+  background-color: transparent;
+  border: solid 2px $color;
+  border-radius: 0;
+  color: $color;
+  display: inline-block;
+  font-family: $copytext-font;
+  font-size: 1em;
+  height: 64px;
+  line-height: 60px;
+  padding: 0 70px 0 10px;
+  position: relative;
+  text-align: center;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 1.25em;
+    padding: 0 90px 0 30px;
+  }
+
+  &::after {
+    background-color: $color;
+    color: $background-color;
+    content: '\f105';
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: (background-color .2s ease-in-out);
+    width: 60px;
+
+  }
+
+  &:hover,
+  &:focus {
+
+    &::after {
+      background-color: lighten($color, 10%);
+      color: lighten($background-color, 10%);
+    }
+  }
+}
+
+// Note: you still need to include a background color and width: 100% on the
+// ::after pseudo-element on hover.
+@mixin hover-border-bottom() {
+  position: relative;
+
+  &::after {
+    background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 5px;
+    left: 0;
+    position: absolute;
+    transition: all .5s ease;
+    width: 0;
+    z-index: 1;
+  }
+}
+
+@mixin cover-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin table-minimal {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    line-height: $base-line-height;
+  }
+
+  thead {
+    th {
+      background-color: $table-header-background;
+      border-bottom: 0;
+      padding: $table-padding;
+    }
+  }
+
+  tbody {
+    background-color: $table-background;
+
+    td {
+      border-bottom: 0;
+      border-top: 1px solid $table-border-color;
+      padding: $table-padding;
+
+      button {
+        display: inline-block;
+        font-size: .7em;
+        line-height: $base-line-height;
+        margin-bottom: .3em;
+        margin-right: .5em;
+        outline: none;
+        padding: .3em 1em;
+        width: 100%;
+
+        @include grid-media($medium-screen-up) {
+          margin-bottom: 0;
+          width: auto;
+        }
+      }
+    }
+
+    tr:hover > td,
+    tr:hover > th {
+      background-color: $table-hover-background;
+    }
+
+    tr:first-child td {
+      border-top: 2px solid $table-border-color;
+    }
+  }
+}
+
+@mixin flash($color) {
+  background-color: $color;
+  color: darken($color, 60%);
+  display: block;
+  font-weight: 600;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+  text-align: center;
+
+  a {
+    color: darken($color, 70%);
+    text-decoration: underline;
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}

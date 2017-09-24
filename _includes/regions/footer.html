@@ -1,0 +1,31 @@
+<footer class="region--footer" role="contentinfo">
+  <div class="region--footer__main">
+    <div class="region--footer__main__menu">
+      <a href="/" class="region--footer__logo">
+        <img src="{{ site.url }}/assets/img/logo-light.svg" alt="Develogger IO" class="develogger-logo develogger-logo--light">
+      </a>
+      {% include components/navigation--footer.html %}
+    </div>
+    <div class="region--footer__main__contact">
+      <h3 class="region--footer__main__contact__title h5">Connect with us</h3>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <address>
+      </address>
+    </div>
+    <div class="region--footer__main__social">
+      <div class="region--footer__main__social__icons">
+        <ul>
+          <li><a href="https://github.com/develoggerio"><i class="fa fa-github fa-lg fa-2x"></i><span class="sr-only">Develogger IO on GitHub</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="region--footer__bottom">
+    <div class="region--footer__bottom__wrapper">
+      <p class="region--footer__bottom__copyright">
+	Powered by Jekyll, theme by <a href="https://github.com/savaslabs/savaslabs.github.io">Savas Labs</a>
+        Copyright &copy; Develogger IO {{ 'now' | date: "%Y" }}
+      </p>
+    </div>
+  </div>
+</footer>

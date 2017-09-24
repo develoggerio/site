@@ -1,0 +1,47 @@
+/**
+ * @file
+ *
+ * General theme styles for the style guide.
+ */
+// scss-lint:disable QualifyingElement
+// scss-lint:disable MergeableSelector
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.styleguide {
+    margin-top: 1.5em;
+  }
+}
+
+.sg-home {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
+  }
+}
+
+h1.styleguide {
+  @include heading-underline($light-grey);
+
+  color: $magenta;
+  margin-top: $base-spacing * 2;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.sg-header__menu__nav li,
+.sg-content__content__menu li {
+  list-style-type: none;
+}
+
+table.styleguide {
+  @include table-minimal;
+}

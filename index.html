@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: "/"
+class: home
+---
+
+<!-- Cover image and overlaid text. -->
+<div class="home__cover">
+  <h1 class="home__cover__heading">We craft elegant <span>Drupal</span><br>web systems that<br><span>propel</span> organizations</h1>
+  <div class="home__cover__content">
+    <div class="home__cover__content__col-left">
+      <div class="home__cover__content__col-left__text">
+        <h2><strong>{{ site.title }}</strong> is a strategy, design, and development agency rooted in <span class="nowrap">Durham, NC</span></h2>
+      </div>
+    </div>
+    <div class="home__cover__content__col-right">
+      <div class="home__cover__content__col-right__text">
+        <h3>We design applications <span class="nowrap">that users love</span></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include regions/service-icons.html class="icon--service--bold" %}
+{% include regions/case-study-tiles.html %}
+{% include regions/cta--elevate-your-organization.html %}
+{% include regions/blog-tiles--sharing-our-expertise.html %}

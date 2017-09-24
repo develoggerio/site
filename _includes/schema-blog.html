@@ -1,0 +1,100 @@
+{% assign date_modified = page.date %}
+{% if page.date_modified %}
+  {% assign date_modified = page.date_modified %}
+{% endif %}
+{% assign logo = '/assets/img/logo.png' %}
+
+{% if page.featured_image %}
+  {% capture image_path_start %}/assets/img{% endcapture %}
+  {% capture image_path %}{{ page.featured_image | prepend: image_path_start }}{% endcapture %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "about": "{{ page.summary }}",
+      "articleBody": "{{ page.content | escape }}",
+      "author": {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "{{ page.author }}",
+        "affiliation": "Develogger IO",
+        "worksFor": "Develogger IO"
+      },
+      "dateCreated": "{{ page.date }}",
+      "dateModified": "{{ date_modified }}",
+      "datePublished": "{{ page.date }}",
+      "headline": "{{ page.title }}",
+      "image": {
+        "@context": "http://schema.org",
+        "@type": "ImageObject",
+        "author": "{{ page.author }}",
+        "datePublished": "{{ page.date }}",
+        "description": "{{ page.featured_image_alt }}",
+        "height": "{{ page.featured_image_height }}",
+        "url": "{{ image_path | prepend: site.url }}",
+        "width": "{{ page.featured_image_width }}"
+      },
+      "inLanguage": "en-US",
+      "keywords": "{{ page.tags | join: ', ' }}",
+      "mainEntityOfPage": "{{ page.url | prepend: site.url }}",
+      "publisher": {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "description": "{{ site.description }}",
+        "email": "{{ site.email}}",
+        "logo": {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "description": "Develogger IO logo",
+          "height": "50px",
+          "url": "{{ logo | prepend: site.url }}",
+          "width": "114px"
+        },
+        "name": "Develogger IO",
+        "url": "{{ site.url }}"
+      },
+      "sourceOrganization": "Develogger IO",
+      "text": "{{ page.content | escape | textify }}",
+      "url": "{{ page.url | prepend: site.url }}"
+    }
+  </script>
+{% else %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "about": "{{ page.summary }}",
+      "articleBody": "{{ content | escape }}",
+      "author": {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "{{ page.author }}",
+        "affiliation": "Develogger IO",
+        "worksFor": "Develogger IO"
+      },
+      "dateCreated": "{{ page.date }}",
+      "dateModified": "{{ date_modified }}",
+      "datePublished": "{{ page.date }}",
+      "headline": "{{ page.title }}",
+      "inLanguage": "en-US",
+      "keywords": "{{ page.tags | join: ', ' }}",
+      "mainEntityOfPage": "{{ page.url | prepend: site.url }}",
+      "publisher": {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Develogger IO",
+        "logo": {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "description": "Develogger IO logo",
+          "height": "50px",
+          "url": "{{ logo | prepend: site.url }}",
+          "width": "114px"
+        }
+      },
+      "sourceOrganization": "Develogger IO",
+      "text": "{{ content | escape | textify }}",
+      "url": "{{ page.url | prepend: site.url }}"
+    }
+  </script>
+{% endif %}

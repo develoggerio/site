@@ -1,0 +1,17 @@
+# For Jekyll.
+_site
+.sass-cache
+.tweet-cache
+tmp
+node_modules
+assets
+_includes/css
+
+# For Travis.
+.bundle
+vendor
+
+# For the Hologram style guide.
+styleguide
+_styleguide_assets/styleguide.css
+
