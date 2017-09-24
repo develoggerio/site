@@ -3,6 +3,8 @@
 
 - slug: jekyll
   name: Jekyll
+- slug: foss
+  name: FOSS
 - slug: bourbon
   name: Bourbon
 - slug: sass
