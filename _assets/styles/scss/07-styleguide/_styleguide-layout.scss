@@ -1,0 +1,64 @@
+/**
+ * @file
+ *
+ * Layout styles for the style guide.
+ */
+
+.sg-outer-container {
+  @include outer-container();
+}
+
+.sg-content {
+  padding: $base-margin $base-spacing;
+
+  .sg-content__content {
+    clear: both;
+    padding-top: $base-margin;
+  }
+}
+
+// Component menu.
+.sg-content__content__menu {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 0 $base-spacing * 1.5;
+
+    li {
+      font-size: 1.2em;
+      padding: 0 $base-spacing / 4 $base-spacing / 4 0;
+      //width: 100%;
+
+      @include grid-media($small-screen-up) {
+        padding: 0 $base-spacing / 2 $base-spacing / 2 0;
+        //width: 50%;
+      }
+
+      @include grid-media($medium-screen-up) {
+        //width: 33.333%;
+      }
+
+      @include grid-media($large-screen-up) {
+        //width: 25%;
+      }
+
+      a {
+        @include button-dark($orange);
+
+        font-size: 1em;
+        padding: .25em 1.25em;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+// Keep home page content from getting too wide.
+.sg-home {
+  .sg-content__content__body {
+    @include grid-media($large-screen-up) {
+      @include grid-column(8);
+    }
+  }
+}

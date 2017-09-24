@@ -1,0 +1,25 @@
+/**
+ * @file
+ *
+ * Key-value list region styles.
+ */
+
+/*doc
+---
+title: Key-value list
+name: key-value-list
+category: Regions
+---
+
+
+*/
+
+.region--key-value-list {
+  border-bottom: solid 1px $orange;
+  border-top: solid 1px $orange;
+  padding: $base-spacing * 3 $base-spacing 0;
+
+  @include grid-media($medium-screen-up) {
+    padding-top: 0;
+  }
+}

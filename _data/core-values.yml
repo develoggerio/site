@@ -1,0 +1,6 @@
+# A list of our core values and their descriptions.
+
+- name: Core Value
+  id: core-value
+  description: |
+   Something about our values here 

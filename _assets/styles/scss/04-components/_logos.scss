@@ -1,0 +1,38 @@
+/**
+ * @file
+ *
+ * Logo styles.
+ */
+
+/*doc
+---
+title: Logos
+name: logos
+category: Components
+---
+Main logo and light logo.
+
+```html_example
+<div class="styleguide-wrapper">
+  <img src="/assets/img/logo.svg" alt="Develogger IO" class="develogger-logo develogger-logo--main">
+</div>
+<div class="styleguide-wrapper bg-teal">
+  <img src="/assets/img/logo-light.svg" alt="Develogger IO" class="develogger-logo develogger-logo--light">
+</div>
+```
+
+*/
+
+.develogger-logo {
+  display: block;
+  height: $navigation-height;
+  padding: $navigation-padding-vertical 0;
+}
+
+.develogger-logo--main {
+  display: block;
+  height: 2.25em;
+  margin: $navigation-padding-vertical 0;
+  padding: 0;
+  width: 5.125em;
+}

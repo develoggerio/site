@@ -1,0 +1,21 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+.region--hero--results {
+  background-color: $dark-teal;
+  color: $eggshell;
+
+  .region--hero__text {
+
+    h1 {
+      color: $eggshell;
+    }
+  }
+
+  .region--hero__image {
+    background-image: url('/assets/img/bg/results-hero.jpg');
+  }
+}

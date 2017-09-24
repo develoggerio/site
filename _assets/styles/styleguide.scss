@@ -1,0 +1,18 @@
+/**
+ * Style guide styles.
+ */
+
+// Libraries and base rules.
+@import 'scss/01-base/base';
+@import 'scss/01-base/_variables';
+
+// Style guide specific rules.
+@import 'scss/07-styleguide/_styleguide-code-blocks.scss';
+@import 'scss/07-styleguide/_styleguide-component-theming.scss';
+@import 'scss/07-styleguide/_styleguide-example.scss';
+@import 'scss/07-styleguide/_styleguide-example-tables.scss';
+@import 'scss/07-styleguide/_styleguide-header.scss';
+@import 'scss/07-styleguide/_styleguide-home.scss';
+@import 'scss/07-styleguide/_styleguide-layout.scss';
+@import 'scss/07-styleguide/_styleguide-syntax-highlighting.scss';
+@import 'scss/07-styleguide/_styleguide-theming.scss';

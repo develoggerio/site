@@ -1,0 +1,81 @@
+/**
+ * @file
+ *
+ * Post aside styles.
+ */
+
+.region--post-aside {
+
+  margin-top: $base-margin;
+
+  @include grid-media($large-screen-up) {
+    float: left;
+    margin-top: 0;
+    width: 33.333%;
+  }
+
+  // Apply padding to each section so the border between them is full width.
+  .region--post-aside__section {
+    padding: $base-margin $base-spacing;
+
+    @include grid-media($large-screen-up) {
+      padding: $base-margin $base-spacing * 1.5;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      padding: $base-margin $base-spacing * 2;
+    }
+  }
+
+  .region--post-aside__section__wrapper--posts {
+    border-bottom: solid 1px $light-grey;
+
+    .tile--blog__hover {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  // Apply same layout styles to related posts and case studies.
+  .region--post-aside__section__items {
+
+    @include grid-media($medium-screen-up) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include grid-media($large-screen-up) {
+      display: block;
+    }
+
+    > div {
+      margin-bottom: $base-spacing;
+
+      @include grid-media($medium-screen-up) {
+        flex-grow: 0;
+        margin-bottom: 0;
+        width: 48.5%;
+      }
+
+      @include grid-media($large-screen-up) {
+        margin-bottom: $base-spacing;
+        width: 100%;
+      }
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
+  .region--post-aside__section--case-studies {
+    .case-study-block__title {
+      font-family: $copytext-font;
+      font-weight: 400;
+    }
+  }
+
+  .region--post-aside__section--case-studies__cta {
+    margin-top: $base-margin;
+  }
+}

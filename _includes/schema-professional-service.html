@@ -1,0 +1,12 @@
+{% assign logo = '/assets/img/logo.png' %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "ProfessionalService",
+      "description": "{{ site.description }}",
+      "email": "{{ site.email }}",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}",
+      "logo": "{{ <logo></logo> | prepend: site.url }}"
+    }
+</script>

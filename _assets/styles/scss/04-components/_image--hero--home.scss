@@ -1,0 +1,229 @@
+/**
+ * @file
+ *
+ * Styles for the home page cover image (above the fold).
+ */
+
+.home__cover {
+  align-items: center;
+  background: url('/assets/img/bg/home-cover.jpg') $white 50% center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  @include grid-media($medium-screen-up) {
+    height: 80vh;
+    min-height: 580px;
+  }
+
+  @include grid-media($large-screen-up) {
+    height: 75vh;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .home__cover__heading,
+  .home__cover__cta {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .home__cover__heading {
+    clear: both;
+    color: $dark-teal;
+    display: block;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 84px;
+    max-width: 400px;
+    padding: $base-spacing $base-spacing $base-spacing * 3;
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      font-size: 2em;
+      max-width: 780px;
+      padding: $base-spacing * 2 $base-spacing;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      font-size: 3em;
+    }
+
+    @include grid-media($max-width-up) {
+      font-size: 2.75em;
+      max-width: 800px;
+    }
+
+    span {
+      font-size: 1.3em;
+    }
+  }
+
+  .home__cover__cta {
+    margin-top: 2em;
+    padding-bottom: 3em;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 24%;
+      left: 0;
+      margin-top: 4em;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+
+    a {
+      background-color: transparentize($eggshell, .8);
+      font-size: 1em;
+
+      @include grid-media($medium-screen-up) {
+        font-size: 1.25em;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: lighten($teal, 10%);
+      }
+    }
+  }
+
+  .home__cover__content {
+    display: block;
+    margin-top: 3em;
+    position: relative;
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 0;
+      display: flex;
+      height: 20%;
+      justify-content: flex-start;
+      left: 0;
+      margin-top: 0;
+      position: absolute;
+    }
+
+    h2,
+    h3 {
+      color: $eggshell;
+      font-family: $copytext-font;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home__cover__content__col-left,
+    .home__cover__content__col-right {
+      background-color: transparentize($dark-teal, .2);
+      bottom: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .home__cover__content__col-left {
+      background-color: $magenta;
+      background-image: url('assets/img/hp-arrow.svg');
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+
+      @include grid-media($medium-screen-up) {
+        background-color: transparentize($dark-teal, .2);
+        display: flex;
+        flex-basis: 40%;
+        justify-content: flex-end;
+      }
+
+      .home__cover__content__col-left__text {
+        display: block;
+        padding: $base-spacing / 2 $base-spacing;
+        position: relative;
+
+        @include grid-media($medium-screen-up) {
+          align-items: center;
+          display: flex;
+          max-width: 446px;
+          padding: 0 $base-spacing * 4 0 $base-spacing;
+          position: relative;
+          z-index: 1;
+        }
+
+        h2 {
+          font-size: .85em;
+          text-align: center;
+
+          @include grid-media($medium-screen-up) {
+            font-size: 1em;
+            max-width: 240px;
+          }
+
+          @include grid-media($extra-large-screen-up) {
+            font-size: 1.25em;
+          }
+        }
+
+      }
+    }
+
+    .home__cover__content__col-right {
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+
+      @include grid-media($medium-screen-up) {
+        display: flex;
+        flex-basis: 60%;
+        justify-content: flex-start;
+      }
+
+      .home__cover__content__col-right__text {
+        display: block;
+        padding: $base-spacing / 2 $base-spacing;
+        width: 100%;
+
+        @include grid-media($medium-screen-up) {
+          align-items: center;
+          display: flex;
+          justify-content: flex-start;
+          max-width: 890px;
+          padding: 0 $base-spacing * 2;
+        }
+
+        h3 {
+          font-size: 1em;
+          font-weight: 300;
+          text-align: center;
+          text-transform: uppercase;
+
+          @include grid-media($medium-screen-up) {
+            font-size: 1.5em;
+            text-align: left;
+            text-transform: none;
+          }
+
+          @include grid-media($extra-large-screen-up) {
+            font-size: 1.75em;
+          }
+        }
+      }
+    }
+  }
+}

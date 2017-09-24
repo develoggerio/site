@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  {% include head.html %}
+
+  <body{% if page.class %} class="{{ page.class | prepend: 'page--'  }}"{% else %} class="{{ page.layout | prepend: 'page--' }}"{% endif %}>
+
+    {% include regions/header.html %}
+
+    <div class="page-content">
+      {{ content }}
+    </div>
+
+    {% include regions/footer.html %}
+    {% include scripts.html %}
+
+  </body>
+
+</html>

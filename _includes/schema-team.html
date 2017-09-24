@@ -1,0 +1,18 @@
+{% assign counter = 0 %}
+{% assign team_size = site.team | size | minus: 1 %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "colleague": [
+          {% for person in site.team %}{% if person.name != page.name %}"{{ person.name }}"{% assign counter = counter | plus:1 %}{% if counter < team_size %},{% endif %}{% endif %}{% endfor %}
+      ],
+      "image": "{{ page.photo | prepend: "/" | prepend: site.url }}",
+      "jobTitle": "{{ page.job_title }}",
+      "name": "{{ page.name }}",
+      "affiliation": "Develogger IO",
+      "worksFor": "Develogger IO",
+      "description": "{{ page.job_description }}",
+      "url": "{{ page.url | prepend: site.url }}"
+    }
+</script>
